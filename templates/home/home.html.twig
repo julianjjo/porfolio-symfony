@@ -3,26 +3,19 @@
 {% block title %}Welcome!{% endblock %}
 
 {% block body %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Mi Sitio</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Características</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Precios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Deshabilitado</a>
-                </li>
-            </ul>
+    <section class="about-me py-5">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-primary mb-4">About Me</h2>
+                <p class="lead">
+                I am a seasoned Backend Developer with <strong>7 years of experience</strong> specializing in creating robust, scalable solutions using <strong>Java, Python,</strong> and <strong>PHP</strong>. My expertise extends to Full Stack development, proficiently using <strong>JavaScript, TypeScript, CSS,</strong> and <strong>HTML</strong> to deliver dynamic and responsive user interfaces.
+                </p>
+                <p class="mt-3">
+                My journey in tech has also embraced cloud technologies, managing high-quality technical implementations on <strong>AWS</strong> and <strong>Google Cloud</strong>. Whether working on <strong>microservices</strong> or <strong>monolithic architectures</strong>, I prioritize <strong>clean code, technical excellence,</strong> and <strong>clean architecture</strong> principles to drive efficient and effective solutions.
+                </p>
+            </div>
+            </div>
         </div>
-    </nav>
+    </section>
 {% endblock %}

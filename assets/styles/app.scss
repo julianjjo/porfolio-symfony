@@ -1,5 +1,4 @@
+@import 'variables.scss';
 @import 'bootstrap.scss';
-
-body {
-    background-color: lightgray;
-}
+@import 'navbar.scss';
+@import 'home.scss';
