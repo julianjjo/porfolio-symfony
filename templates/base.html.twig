@@ -13,38 +13,38 @@
         {% endblock %}
     </head>
     <body>
-
-            <nav class="navbar navbar-custom navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <!-- Brand reflects your name and profession -->
-                    <a class="navbar-brand" href="#">
-                        <img src="{{ asset('images/logo.svg') }}" alt="Logo" style="height: 30px;"> Julian Mican | Backend Developer
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPortfolio" aria-controls="navbarPortfolio" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarPortfolio">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <!-- Home remains as is, likely the introduction section -->
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <!-- Portfolio section to showcase your projects -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Portfolio</a>
-                            </li>
-                            <!-- Contact section for potential clients to reach out -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
-                            <!-- Skills section could replace the dropdown, showcasing your backend skills -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Skills</a>
-                            </li>
-                        </ul>
-                    </div>
+        {% set current_route = app.request.attributes.get('_route') %}
+        <nav class="navbar navbar-custom navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <!-- Brand reflects your name and profession -->
+                <a class="navbar-brand" href="{{ path('home') }}">
+                    <img src="{{ asset('images/logo.svg') }}" alt="Logo" style="height: 30px;"> Julian Mican | Backend Developer
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPortfolio" aria-controls="navbarPortfolio" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarPortfolio">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Home remains as is, likely the introduction section -->
+                        <li class="nav-item">
+                            <a class="nav-link {% if current_route == 'home' %}active{% endif %}" aria-current="page" href="{{ path('home') }}">Home</a>
+                        </li>
+                        <!-- Portfolio section to showcase your projects -->
+                        <li class="nav-item">
+                            <a class="nav-link {% if current_route == 'experience' %}active{% endif %}" href="{{ path('experience') }}">Experience</a>
+                        </li>
+                        <!-- Contact section for potential clients to reach out -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <!-- Skills section could replace the dropdown, showcasing your backend skills -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Skills</a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
         <div class="container">
             {% block body %}{% endblock %}
         </div>
