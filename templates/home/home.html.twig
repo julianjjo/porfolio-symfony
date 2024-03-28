@@ -1,21 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Welcome!{% endblock %}
+{% block title %}Welcome!
+{% endblock %}
 
 {% block body %}
-    <section class="about-me py-5">
-        <div class="container">
-            <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2 class="text-primary mb-4">About Me</h2>
-                <p class="lead">
-                I am a seasoned Backend Developer with <strong>7 years of experience</strong> specializing in creating robust, scalable solutions using <strong>Java, Python,</strong> and <strong>PHP</strong>. My expertise extends to Full Stack development, proficiently using <strong>JavaScript, TypeScript, CSS,</strong> and <strong>HTML</strong> to deliver dynamic and responsive user interfaces.
-                </p>
-                <p class="mt-3">
-                My journey in tech has also embraced cloud technologies, managing high-quality technical implementations on <strong>AWS</strong> and <strong>Google Cloud</strong>. Whether working on <strong>microservices</strong> or <strong>monolithic architectures</strong>, I prioritize <strong>clean code, technical excellence,</strong> and <strong>clean architecture</strong> principles to drive efficient and effective solutions.
-                </p>
-            </div>
-            </div>
-        </div>
-    </section>
+
+	<!-- Hero section -->
+	<section class="position-relative bg-dark pt-lg-4 pt-xl-5">
+		<div class="jarallax position-absolute top-0 start-0 w-100 h-100" data-jarallax data-speed="0.4">
+			<div class="jarallax-img" style="background-image: url(images/landing/saas-4/hero-bg-pattern.png);"></div>
+		</div>
+		<div class="container position-relative z-2 pt-2 pt-sm-4 pt-md-5">
+			<div class="row justify-content-center pt-5">
+				<div class="col-lg-9 col-xl-8 text-center pt-5 mt-1">
+					<h1 class="display-4 text-white pt-3 mt-3 mb-4">About Me</h1>
+					<p class="lead">
+						I am a seasoned Backend Developer with
+						<strong>7 years of experience</strong>
+						specializing in creating robust, scalable solutions using
+						<strong>Java, Python,</strong>
+						and
+						<strong>PHP</strong>. My expertise extends to Full Stack development, proficiently using
+						<strong>JavaScript, TypeScript, CSS,</strong>
+						and
+						<strong>HTML</strong>
+						to deliver dynamic and responsive user interfaces.
+					</p>
+					<p class="mt-1">
+						My journey in tech has also embraced cloud technologies, managing high-quality technical implementations on
+						<strong>AWS</strong>
+						and
+						<strong>Google Cloud</strong>. Whether working on
+						<strong>microservices</strong>
+						or
+						<strong>monolithic architectures</strong>, I prioritize
+						<strong>clean code, technical excellence,</strong>
+						and
+						<strong>clean architecture</strong>
+						principles to drive efficient and effective solutions.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="d-none d-lg-block" style="height: 480px;"></div>
+		<div class="d-lg-none" style="height: 400px;"></div>
+		<div class="d-flex position-absolute bottom-0 start-0 w-100 overflow-hidden mb-n1" style="color: var(--ar-body-bg);">
+			<div class="position-relative start-50 translate-middle-x flex-shrink-0" style="width: 3774px;">
+				<svg width="3774" height="201" viewbox="0 0 3774 201" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 200.003C0 200.003 1137.52 0.188224 1873.5 0.000134392C2614.84 -0.189325 3774 200.003 3774 200.003H0Z" fill="currentColor"/></svg>
+			</div>
+		</div>
+	</section>
 {% endblock %}

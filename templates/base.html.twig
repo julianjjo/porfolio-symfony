@@ -1,52 +1,169 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
 
-            <nav class="navbar navbar-custom navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <!-- Brand reflects your name and profession -->
-                    <a class="navbar-brand" href="#">
-                        <img src="{{ asset('images/logo.svg') }}" alt="Logo" style="height: 30px;"> Julian Mican | Backend Developer
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPortfolio" aria-controls="navbarPortfolio" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarPortfolio">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <!-- Home remains as is, likely the introduction section -->
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <!-- Portfolio section to showcase your projects -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Portfolio</a>
-                            </li>
-                            <!-- Contact section for potential clients to reach out -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
-                            <!-- Skills section could replace the dropdown, showcasing your backend skills -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Skills</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        <div class="container">
-            {% block body %}{% endblock %}
-        </div>
-    </body>
+		<style>
+			.page-loading {
+				position: fixed;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				-webkit-transition: all 0.4s 0.2s ease-in-out;
+				transition: all 0.4s 0.2s ease-in-out;
+				background-color: #fff;
+				opacity: 0;
+				visibility: hidden;
+				z-index: 9999;
+			}
+			[data-bs-theme="dark"] .page-loading {
+				background-color: #121519;
+			}
+			.page-loading.active {
+				opacity: 1;
+				visibility: visible;
+			}
+			.page-loading-inner {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 100%;
+				text-align: center;
+				-webkit-transform: translateY(-50%);
+				transform: translateY(-50%);
+				-webkit-transition: opacity 0.2s ease-in-out;
+				transition: opacity 0.2s ease-in-out;
+				opacity: 0;
+			}
+			.page-loading.active > .page-loading-inner {
+				opacity: 1;
+			}
+			.page-loading-inner > span {
+				display: block;
+				font-family: "Inter", sans-serif;
+				font-size: 1rem;
+				font-weight: normal;
+				color: #6f788b;
+			}
+			[data-bs-theme="dark"] .page-loading-inner > span {
+				color: #fff;
+				opacity: .6;
+			}
+			.page-spinner {
+				display: inline-block;
+				width: 2.75rem;
+				height: 2.75rem;
+				margin-bottom: 0.75rem;
+				vertical-align: text-bottom;
+				background-color: #d7dde2;
+				border-radius: 50%;
+				opacity: 0;
+				-webkit-animation: spinner 0.75s linear infinite;
+				animation: spinner 0.75s linear infinite;
+			}
+			[data-bs-theme="dark"] .page-spinner {
+				background-color: rgba(255, 255, 255, 0.25);
+			}
+			@-webkit-keyframes spinner {
+				0% {
+					-webkit-transform: scale(0);
+					transform: scale(0);
+				}
+				50% {
+					opacity: 1;
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+			@keyframes spinner {
+				0% {
+					-webkit-transform: scale(0);
+					transform: scale(0);
+				}
+				50% {
+					opacity: 1;
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+		</style>
+
+		<script>
+			(function () {
+                window.onload = function () {
+                    const preloader = document.querySelector('.page-loading')
+                    preloader.classList.remove('active')
+                    setTimeout(function () {
+                        preloader.remove()
+                    }, 1500)
+                }
+            })()
+		</script>
+	</head>
+	<body>
+		{% set current_route = app.request.attributes.get('_route') %}
+
+
+		<!-- Page loading spinner -->
+		<div class="page-loading active">
+			<div class="page-loading-inner">
+				<div class="page-spinner"></div>
+				<span>Loading...</span>
+			</div>
+		</div>
+
+		<!-- Page wrapper -->
+		<main class="page-wrapper">
+			<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+				<div
+					class="container-fluid">
+					<!-- Brand reflects your name and profession -->
+					<a class="navbar-brand" href="{{ path('home') }}">
+						<img src="{{ asset('images/logo.svg') }}" alt="Logo" style="height: 30px;">
+						Julian Mican | Backend Developer
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPortfolio" aria-controls="navbarPortfolio" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarPortfolio">
+						<ul
+							class="navbar-nav me-auto mb-2 mb-lg-0">
+							<!-- Home remains as is, likely the introduction section -->
+							<li class="nav-item">
+								<a class="nav-link {% if current_route == 'home' %}active{% endif %}" aria-current="page" href="{{ path('home') }}">Home</a>
+							</li>
+							<!-- Portfolio section to showcase your projects -->
+							<li class="nav-item">
+								<a class="nav-link {% if current_route == 'experience' %}active{% endif %}" href="{{ path('experience') }}">Experience</a>
+							</li>
+							<!-- Contact section for potential clients to reach out -->
+							<li class="nav-item">
+								<a class="nav-link" href="#">Contact</a>
+							</li>
+							<!-- Skills section could replace the dropdown, showcasing your backend skills -->
+							<li class="nav-item">
+								<a class="nav-link" href="#">Skills</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			{% block body %}{% endblock %}
+		</main>
+	</body>
 </html>
