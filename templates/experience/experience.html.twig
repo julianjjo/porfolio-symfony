@@ -1,0 +1,159 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio
+{% endblock %}
+
+{% block body %}
+<!-- Hero section -->
+<section class="position-relative bg-dark pt-lg-4 pt-xl-5">
+	<div class="jarallax position-absolute top-0 start-0 w-100 h-100" data-jarallax data-speed="0.4">
+		<div class="jarallax-img" style="background-image: url(images/fondo_verde_ negro.png);"></div>
+	</div>
+	<div class="container position-relative z-2 pt-2 pt-sm-4 pt-md-5">
+		<div class="row justify-content-center pt-5">
+			<div class="col-lg-9 col-xl-8 text-center pt-5 mt-1">
+				<h1 class="display-4 text-white pt-3 mt-3 mb-4">My Professional Experience</h1>
+			</div>
+		</div>
+	</div>
+	<div class="d-none d-lg-block" style="height: 100px;"></div>
+	<div class="d-lg-none" style="height: 20px;"></div>
+</section>
+
+<section class="overflow-hidden py-5 my-md-2 my-xl-4 my-xxl-5">
+	<div
+		class="container py-2 py-sm-4 py-lg-5">
+
+		<!-- Step -->
+		<div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
+			<div class="col-md-6 col-xl-5 offset-lg-1 order-md-2 pb-2 pb-md-0 mb-4 mb-md-0" data-disable-parallax-down="md">
+				<img class="d-dark-mode-none" src="{{ asset('images/landing/saas-2/steps/01-light.png') }}" width="525" alt="Image">
+				<img class="d-none d-dark-mode-block" src="{{ asset('images/landing/saas-2/steps/01-dark.png') }}" width="525" alt="Image">
+			</div>
+			<div class="col-md-6 col-lg-5 col-xl-4 offset-xl-1 order-md-1" data-disable-parallax-down="md">
+				<div class="pe-md-4 pe-lg-0">
+					<span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4">9 months</span>
+					<h3 class="h2 mb-3 mb-lg-4">Fusagasuga City Hall</h3>
+					<p class="pb-1 pb-lg-0 mb-4 mb-lg-5">Full stack developer with Symfony, CSS, HTML. Developed an open data platform.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Arrow -->
+		<div class="d-none d-lg-flex justify-content-center">
+			<svg class="d-block text-primary" width="339" height="365" viewbox="0 0 339 365" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: -150px; margin-top: -140px; margin-bottom: -108px;">
+				<path d="M324 291.371C120.111 291.37 240.756 58.7225 1.00032 73.2606" stroke="url(#arrow1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"></path>
+				<path d="M337.375 290.62C338.074 290.998 338.074 292.001 337.375 292.379L328.476 297.196C327.81 297.557 327 297.074 327 296.317L327 286.683C327 285.925 327.81 285.443 328.476 285.803L337.375 290.62Z" fill="currentColor"></path>
+				<defs>
+					<linearGradient id="arrow1" x1="324" y1="291.5" x2="-2.99974" y2="72.4997" gradientunits="userSpaceOnUse">
+						<stop offset="0" stop-color="currentColor"></stop>
+						<stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
+					</linearGradient>
+				</defs>
+			</svg>
+		</div>
+
+		<!-- Step -->
+		<div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
+			<div class="col-md-6 col-xl-5 offset-xl-1 pb-2 pb-md-0 mb-4 mb-md-0" data-disable-parallax-down="md">
+				<img class="d-dark-mode-none" src="{{ asset('images/landing/saas-2/steps/01-light.png') }}" width="525" alt="Image">
+				<img class="d-none d-dark-mode-block" src="{{ asset('images/landing/saas-2/steps/01-dark.png') }}" width="525" alt="Image">
+			</div>
+			<div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1" data-disable-parallax-down="md">
+				<div class="ps-md-4 ps-lg-0">
+					<span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4">1 year</span>
+					<h3 class="h2 mb-3 mb-lg-4">Ministry of Environment and Sustainable Development of Colombia</h3>
+					<p class="pb-1 pb-lg-0 mb-4 mb-lg-5">Developed new functionalities for an LMS platform using PHP and MySQL.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Arrow -->
+		<div class="d-none d-lg-flex justify-content-center">
+			<svg class="d-block text-primary" width="263" height="275" viewbox="0 0 263 275" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: -60px; margin-left: -120px; margin-bottom: -80px;">
+				<path d="M8.13678 249.647C7.47108 250.081 6.59001 249.602 6.59106 248.808L6.60444 238.689C6.60544 237.931 7.4158 237.45 8.08162 237.811L16.5478 242.408C17.2136 242.77 17.2512 243.712 16.6163 244.125L8.13678 249.647Z" fill="currentColor"></path>
+				<path d="M261.961 37.8891C216.908 65.6243 128.226 135.486 133.916 193.05C141.029 265.005 265.134 173.468 173.666 148.634C89.2542 125.715 30.9125 210.547 13.9796 236.702" stroke="url(#arrow2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"></path>
+				<defs>
+					<linearGradient id="arrow2" x1="13.9797" y1="234.5" x2="276.704" y2="60.1939" gradientunits="userSpaceOnUse">
+						<stop offset="0" stop-color="currentColor"></stop>
+						<stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
+					</linearGradient>
+				</defs>
+			</svg>
+		</div>
+
+		<!-- Step -->
+		<div class="row align-items-center position-relative">
+			<div class="col-md-6 col-xl-5 offset-lg-1 order-md-2 d-md-flex justify-content-end pb-2 pb-md-0 mb-4 mb-md-0" data-disable-parallax-down="md">
+				<img class="d-dark-mode-none" src="{{ asset('images/landing/saas-2/steps/01-light.png') }}" width="525" alt="Image">
+				<img class="d-none d-dark-mode-block" src="{{ asset('images/landing/saas-2/steps/01-dark.png') }}" width="525" alt="Image">
+			</div>
+			<div class="col-md-6 col-lg-5 col-xl-4 offset-xl-1 order-md-1" data-disable-parallax-down="md">
+				<div class="pe-md-4 pe-lg-0">
+					<span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4">3 years</span>
+					<h3 class="h2 mb-3 mb-lg-4">ElTiempo</h3>
+					<p class="pb-1 pb-lg-0 mb-4 mb-lg-5">Full stack developer using Angular and Symfony. Improved and added new functionalities to their news website.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Arrow -->
+		<div class="d-none d-lg-flex justify-content-center">
+			<svg class="d-block text-primary" width="339" height="365" viewbox="0 0 339 365" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: -150px; margin-top: -140px; margin-bottom: -108px;">
+				<path d="M324 291.371C120.111 291.37 240.756 58.7225 1.00032 73.2606" stroke="url(#arrow1)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"></path>
+				<path d="M337.375 290.62C338.074 290.998 338.074 292.001 337.375 292.379L328.476 297.196C327.81 297.557 327 297.074 327 296.317L327 286.683C327 285.925 327.81 285.443 328.476 285.803L337.375 290.62Z" fill="currentColor"></path>
+				<defs>
+					<linearGradient id="arrow1" x1="324" y1="291.5" x2="-2.99974" y2="72.4997" gradientunits="userSpaceOnUse">
+						<stop offset="0" stop-color="currentColor"></stop>
+						<stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
+					</linearGradient>
+				</defs>
+			</svg>
+		</div>
+
+		<!-- Step -->
+		<div class="row align-items-center position-relative pb-5 pb-lg-0 mb-1 mb-sm-2 mb-md-4 mb-lg-0">
+			<div class="col-md-6 col-xl-5 offset-xl-1 pb-2 pb-md-0 mb-4 mb-md-0" data-disable-parallax-down="md">
+				<img class="d-dark-mode-none" src="{{ asset('images/landing/saas-2/steps/01-light.png') }}" width="525" alt="Image">
+				<img class="d-none d-dark-mode-block" src="{{ asset('images/landing/saas-2/steps/01-dark.png') }}" width="525" alt="Image">
+			</div>
+			<div class="col-md-6 col-lg-5 col-xl-4 offset-lg-1" data-disable-parallax-down="md">
+				<div class="ps-md-4 ps-lg-0">
+					<span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4">2 years</span>
+					<h3 class="h2 mb-3 mb-lg-4">Sophos Solutions</h3>
+					<p class="pb-1 pb-lg-0 mb-4 mb-lg-5">Developed a platform for creating automated tests using Java with Spring Boot and Angular, targeting testers without SQL experience.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Arrow -->
+		<div class="d-none d-lg-flex justify-content-center">
+			<svg class="d-block text-primary" width="263" height="275" viewbox="0 0 263 275" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: -60px; margin-left: -120px; margin-bottom: -80px;">
+				<path d="M8.13678 249.647C7.47108 250.081 6.59001 249.602 6.59106 248.808L6.60444 238.689C6.60544 237.931 7.4158 237.45 8.08162 237.811L16.5478 242.408C17.2136 242.77 17.2512 243.712 16.6163 244.125L8.13678 249.647Z" fill="currentColor"></path>
+				<path d="M261.961 37.8891C216.908 65.6243 128.226 135.486 133.916 193.05C141.029 265.005 265.134 173.468 173.666 148.634C89.2542 125.715 30.9125 210.547 13.9796 236.702" stroke="url(#arrow2)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"></path>
+				<defs>
+					<linearGradient id="arrow2" x1="13.9797" y1="234.5" x2="276.704" y2="60.1939" gradientunits="userSpaceOnUse">
+						<stop offset="0" stop-color="currentColor"></stop>
+						<stop offset="1" stop-color="currentColor" stop-opacity="0"></stop>
+					</linearGradient>
+				</defs>
+			</svg>
+		</div>
+
+		<!-- Step -->
+		<div class="row align-items-center position-relative">
+			<div class="col-md-6 col-xl-5 offset-lg-1 order-md-2 d-md-flex justify-content-end pb-2 pb-md-0 mb-4 mb-md-0" data-disable-parallax-down="md">
+				<img class="d-dark-mode-none" src="{{ asset('images/landing/saas-2/steps/01-light.png') }}" width="525" alt="Image">
+				<img class="d-none d-dark-mode-block" src="{{ asset('images/landing/saas-2/steps/01-dark.png') }}" width="525" alt="Image">
+			</div>
+			<div class="col-md-6 col-lg-5 col-xl-4 offset-xl-1 order-md-1" data-disable-parallax-down="md">
+				<div class="pe-md-4 pe-lg-0">
+					<span class="badge fs-sm bg-primary bg-opacity-10 text-primary mb-3 mb-lg-4">Currently, 2 years</span>
+					<h3 class="h2 mb-3 mb-lg-4">Farmatodo</h3>
+					<p class="pb-1 pb-lg-0 mb-4 mb-lg-5">Backend developer in Spring Boot, developing new functionalities for microservices, working with OracleDB and PostgreSQL.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

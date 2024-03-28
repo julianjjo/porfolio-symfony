@@ -7,6 +7,8 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
+import 'parallax-js/src/parallax';
+import 'aos/src/js/aos';
 import './theme';
 
 const $ = require('jquery');
